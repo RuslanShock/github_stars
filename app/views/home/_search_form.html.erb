@@ -1,0 +1,7 @@
+<h1>Find Stars</h1>
+<br>
+<%= form_tag home_search_path, method: 'get', 'data-turbo-frame'=>'stars-list' do %>
+  <%= label_tag 'Repository: ' %>
+  <%= text_field_tag 'repo', 'rubygems/rubygems' %>
+  <%= submit_tag "Search" %>
+<% end %>

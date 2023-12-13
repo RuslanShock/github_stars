@@ -1,0 +1,11 @@
+<%= turbo_frame_tag 'stars-list' do %>
+  <% stars.present? && stars.map do |star| %>
+    <div>
+      <%= star %>
+      <%= link_to 'Download PDF', :action => "get_pdf", :star => star, :format =>'pdf' %>
+    </div>
+  <% end %>
+
+  <%= link_to 'Download ZIP', :action => "get_zip", :stars => stars, :format =>'zip' %>
+
+<% end %>
