@@ -300,7 +300,6 @@ DEPENDENCIES
   bootstrap
   capybara
   debug
-  execjs
   font-awesome-sass (~> 6.5.1)
   importmap-rails
   jbuilder
