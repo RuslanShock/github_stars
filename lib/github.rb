@@ -2,7 +2,7 @@ class Github
   attr_accessor :client
 
   def initialize
-    @client = Octokit::Client.new(access_token: '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')
+    @client = Octokit::Client.new(access_token: Rails.application.credentials.github_access_token)
   end
 
   def self.instance
