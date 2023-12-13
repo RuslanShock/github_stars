@@ -306,6 +306,7 @@ DEPENDENCIES
   liquid
   octokit
   pry
+  psych
   puma (>= 5.0)
   rails (~> 7.1.2)
   redis (>= 4.0.1)
@@ -324,7 +325,7 @@ DEPENDENCIES
   wkhtmltopdf-binary
 
 RUBY VERSION
-   ruby 3.1.4p223
+   ruby 3.2.2p53
 
 BUNDLED WITH
    2.1.2
