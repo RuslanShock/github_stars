@@ -1,9 +1,16 @@
-class PdfGenerator
+class ZipGenerator
+  require 'zip'
+
   class << self
-    def generate_star_pdf(star)
-      template = '<h1>Hello There! {{star}}</h1>'
-      formatted = Liquid::Template.parse(template).render!('star' => star)
-      WickedPdf.new.pdf_from_string(formatted)
+    def generate_stars_zip(stars)
+      ::Zip::OutputStream.write_buffer do |stream|
+        stars.each_with_index do |star, index|
+          place = index+1
+          file = PdfGenerator.generate_star_pdf({ star:, place: })
+          stream.put_next_entry "#{star}.pdf"
+          stream.print file
+        end
+      end
     end
   end
 end

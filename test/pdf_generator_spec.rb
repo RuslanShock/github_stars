@@ -13,7 +13,7 @@ describe 'PdfGenerator' do
 
   context 'when condition' do
     it 'succeeds' do
-      skip 'Not implemented'
+
     end
   end
 end

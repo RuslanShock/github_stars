@@ -1,7 +1,9 @@
-<h1>Find Stars</h1>
+<h1>GitHub Repo Stars</h1>
 <br>
-<%= form_tag home_search_path, method: 'get', 'data-turbo-frame'=>'stars-list' do %>
-  <%= label_tag 'Repository: ' %>
-  <%= text_field_tag 'repo', 'rubygems/rubygems' %>
-  <%= submit_tag "Search" %>
+<%= form_tag home_search_path, method: 'get', 'data-turbo-frame' => 'stars-list' do %>
+  <div class="input-group w-50">
+    <span class="input-group-text">Repository</span>
+    <%= text_field_tag 'repo', '', placeholder: 'rubygems/rubygems', class: 'form-control', required: true %>
+    <%= submit_tag "Search", class: 'btn btn-outline-primary' %>
+  </div>
 <% end %>
