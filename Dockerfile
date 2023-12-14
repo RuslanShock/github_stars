@@ -27,8 +27,7 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git libvips pkg-config libssl1.1
 
 RUN dpkg -L libssl1.1
-RUN ln -s -f /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1 /usr/lib/libcrypto.so.1.1
-RUN ln -s -f /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1 /lib/libcrypto.so.1.1
+RUN ln -s -f /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1 /usr/local/lib/libcrypto.so.1.1
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
