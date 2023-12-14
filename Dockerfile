@@ -19,7 +19,7 @@ FROM base as build
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libvips pkg-config openssl openssl1.1
+    apt-get install --no-install-recommends -y build-essential git libvips pkg-config openssl1.1
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
