@@ -17,9 +17,12 @@ ENV RAILS_ENV="production" \
 # Throw-away build stage to reduce size of final image
 FROM base as build
 
+RUN echo "deb http://security.ubuntu.com/ubuntu focal-security main" | tee /etc/apt/sources.list.d/focal-security.list
+
 # Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libvips pkg-config openssl1.1 libssl-dev libssl1.1
+    apt-get install --no-install-recommends -y build-essential git libvips pkg-config openssl1.1 libssl-dev libssl1.1 \
+    dpkg -L libssl1.1
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
